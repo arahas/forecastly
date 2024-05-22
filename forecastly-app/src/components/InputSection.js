@@ -1,7 +1,9 @@
-import { Container, Box, Text, Button, ButtonGroup, HStack  } from '@chakra-ui/react';
+import { Container, Box, Text, Button, ButtonGroup, HStack, Input  } from '@chakra-ui/react';
 
 
 const InputSection = () => {
+
+    
 
 return (
     <Container maxW='xl'>
@@ -11,8 +13,9 @@ return (
         <Box bg='lightgrey' Display='flex' alignItems='center' justifyContent='center' p={4}>
             <HStack spacing='12px'> 
             <Text> Select input file for forecast creation.  </Text>
-            <Button bg='tomato' borderRadius='md' px={4} h={8} color='white'> file </Button>
             </HStack>
+            <br/>
+            <Input type="file" size="md"/>
         </Box>
     </Container>
 )
