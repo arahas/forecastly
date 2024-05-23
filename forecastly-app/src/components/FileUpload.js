@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Input } from '@chakra-ui/react';
 import Papa from 'papaparse';
 
 const FileUpload = () => {
@@ -12,14 +13,14 @@ const FileUpload = () => {
                 const text = e.target.result;
                 parseCSV(text);
             };
-        reader.readAsText(file);
+            reader.readAsText(file);
         }
     };
 
     const parseCSV = (text) => {
         Papa.parse(text, {
-            header:true,
-            skipEmptyLines:true,
+            header: true,
+            skipEmptyLines: true,
             complete: (results) => {
                 setCsvData(results.data);
             },
@@ -28,11 +29,11 @@ const FileUpload = () => {
 
     return (
         <div>
-            <h2>Upload CSV File</h2>
-            <input type="file" accept=".csv" onChange={handleFileChange} />
+            <Input type="file" accept=".csv" onChange={handleFileChange} />
+            <br/>
             {csvData && (
                 <div>
-                    <h3>CSV Data</h3>
+                    CSV Data
                     <pre>{JSON.stringify(csvData, null, 2)}</pre>
                 </div>
             )}
