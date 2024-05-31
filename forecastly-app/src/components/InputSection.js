@@ -1,7 +1,7 @@
 import { Container, Box, Text, Heading, Button, ButtonGroup, HStack, Input  } from '@chakra-ui/react';
 import FileUpload from "./FileUpload";
 
-const InputSection = () => {
+const InputSection = ({csvData, updateCsvData}) => {
     return (
         <Container>
             <Box bg='grey' w='100%' p={4} color='white'>
@@ -10,7 +10,7 @@ const InputSection = () => {
             <Box bg='lightgrey' Display='flex' alignItems='center' justifyContent='center' p={4}>
                 <Text> Select input file for forecast creation.  </Text>
                 <br/>
-                <FileUpload/>
+                <FileUpload csvData={csvData} updateCsvData={updateCsvData}/>
             </Box>
         </Container>
     )

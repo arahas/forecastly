@@ -1,9 +1,9 @@
 import { Container, Box, Text, Heading, 
         Button, ButtonGroup, HStack, Input, 
-        FormControl, FormLabel, Select} from '@chakra-ui/react';
+        FormControl, FormLabel, Select, Table} from '@chakra-ui/react';
 import FileUpload from "./FileUpload";
 
-const ModelSection = () => {
+const ModelSection = ({csvData, updateCsvData}) => {
     return (
         <Container>
             <Box bg='grey' w='100%' p={4} color='white'>
@@ -22,7 +22,6 @@ const ModelSection = () => {
             </Box>
         </Container>
     )
-    };
-
+    }; 
 
 export default ModelSection; 
